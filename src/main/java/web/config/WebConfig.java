@@ -1,9 +1,11 @@
 package web.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -53,16 +55,7 @@ public class WebConfig implements WebMvcConfigurer {
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
     }
-    @Bean
-    public List<Car> cars(){
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car("BMW","M5","a111aa777"));
-        cars.add(new Car("Mersedes","w221","o111oo77"));
-        cars.add(new Car("LADA","granta","h632sd977"));
-        cars.add(new Car("Lexus","lx570","l777ex777"));
-        cars.add(new Car("Lamborgini","aventador","q333qq77"));
-        return cars;
-    }
+
     @Bean
     public CarService carService(){
         return new CarServiceImpl();

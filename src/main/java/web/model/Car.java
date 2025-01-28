@@ -1,18 +1,6 @@
 package web.model;
 
 public class Car {
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
     private String brand;
 
     private String model;
@@ -23,6 +11,18 @@ public class Car {
         this.brand = brand;
         this.model = model;
         this.number = number;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getNumber() {
+        return number;
     }
 
     @Override
